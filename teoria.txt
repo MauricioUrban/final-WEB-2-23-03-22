@@ -1,0 +1,31 @@
+2. Analice y responda las siguientes preguntas:
+a.	¿Porque piensa que se decidió implementar algunas de las necesidades como Servicios WEB? ¿Cuál es su ventaja? 
+Al implementarlo como Servicio Web las publicaciones pueden ser utilizadas por otros sistemas web o bolsas de trabajo de otras localidades y/o privadas o cualquiera que necesite profesionales o consultar esos datos. La ventaja es que la info llega por medio de un JSON o XML y puede ser leída y/o manipulada por cualquier sistema.
+
+b.	¿Qué otros servicios web pensaría que pueden ser útiles en este sistema? De al menos dos ejemplos, defina los endpoints de cada uno y explique brevemente cual es su función y porque pueden ser útiles
+
+    Remover publicaciones
+
+    pubicacion/:id, controller, deletePublicacion, DELETE;
+    publicacion/:id, controller, editarPublicacion, UPDATE;
+
+3. Explique brevemente las ventajas de usar:
+i.	CSR (Client Side Rendering)
+
+Renderizar del lado del cliente:
+•	Nos da mejor velocidad de respuesta;
+•	Tenemos mejor experiencia de usuario;
+•	Se pueden hacer páginas más vistosas;
+
+
+ii.	PDO:
+
+ PDO maneja la persistencia de los datos y nos da la posibilidad de poder migrar a cualquier otra base de datos sin mayores complicaciones;
+
+4.  Explique el patrón de diseño MVC. Describa cada una de sus partes y las responsabilidades de las mismas. Ventajas y desventajas del uso de este patrón. ¿En qué tipo de sistema no sería útil usar este patrón?
+
+El patrón MVC, tienen 3 partes bien diferenciadas, cada uno con su tarea específica, el detalle:
+•	Controller: se encarga de responder a todas las peticiones de los usuarios, interactuando con la vista y el modelo. Es el que maneja tanto la vista como el Modelo. Le solicita info o le ordena al Modelo, este le responde y el Controller se la pasa a la vista para que la muestre. También controla y valida los datos ingresados por los usuarios;
+•	Vista: se encarga de generar la vista y mostrar todo a los usuarios. Interactúa con el usuario, este le hace peticiones y la vista se la pasa al controller, cuando este da la respuesta, la vista se actualiza con la nueva info;
+•	Model: se encarga de la persistencia de los datos, a pedido del Controller hacer las altas, bajas y modificaciones. Además de devolverle al Controller todas las consultas que haga de la info guardada en las bases de datos
+
